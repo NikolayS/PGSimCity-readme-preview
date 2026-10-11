@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>PGSimCity · README preview</title><style>*{box-sizing:border-box}html{color-scheme:dark;scroll-behavior:smooth}body{margin:0;background:#0d1117;color:#e6edf3;font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}header{border-bottom:1px solid #30363d;padding:16px max(24px,calc((100vw - 980px)/2));background:#161b22}header a{color:#79c0ff}main{max-width:980px;margin:32px auto;padding:0 24px 64px}h1{font-size:clamp(36px,7vw,54px);line-height:1.15;letter-spacing:-.04em;margin:0 0 14px}h2{font-size:25px;border-bottom:1px solid #30363d;padding-bottom:10px;margin-top:36px}h3{font-size:20px}a{color:#79c0ff;text-decoration:none}a:hover{text-decoration:underline}img{max-width:100%;height:auto;vertical-align:middle}img[src$="screenshot.png"]{border:1px solid #30363d;border-radius:12px;width:100%}blockquote{margin:20px 0;padding:18px 22px;border:1px solid #6b3c21;border-left:4px solid #ff6600;border-radius:8px;background:#1a1511}blockquote p{margin:0 0 8px}blockquote p:last-child{margin-bottom:0}table{border-collapse:collapse;width:100%;font-size:14px;margin:20px 0;display:block;overflow-x:auto}th,td{padding:12px 14px;border:1px solid #30363d;text-align:left;vertical-align:top}th{background:#161b22}tr:nth-child(even){background:#121820}code{background:#21262d;border-radius:4px;padding:2px 5px;font-size:.9em}pre{overflow:auto;padding:18px;background:#161b22;border:1px solid #30363d;border-radius:8px}pre code{padding:0;background:none}hr{border:0;border-top:1px solid #30363d;margin:32px 0}details{border:1px solid #30363d;border-radius:8px;padding:16px}summary{cursor:pointer;font-weight:600}.anchor{display:none}@media(max-width:600px){main{padding:0 16px 40px}header{padding:12px 16px}td,th{padding:10px}blockquote{padding:14px}}</style></head><body><header>README preview · <a href="https://nikolays.github.io/PGSimCity/">Open the unchanged city →</a></header><main><h1 dir="auto">PGSimCity</h1>
+<p dir="auto"><strong>Walk through PostgreSQL. Break things. Understand why.</strong></p>
+<p dir="auto"><a href="https://github.com/NikolayS/PGSimCity/actions/workflows/ci.yml"><img src="https://github.com/NikolayS/PGSimCity/actions/workflows/ci.yml/badge.svg?branch=main" alt="CI" style="max-width: 100%;"></a><br>
+<a href="https://github.com/NikolayS/PGSimCity/blob/mark-readme-refresh/LICENSE"><img src="docs/badges/license.svg" alt="License: Apache-2.0" style="max-width: 100%;"></a><br>
+<a href="https://github.com/NikolayS/PGSimCity/blob/mark-readme-refresh/package.json"><img src="docs/badges/typescript.svg" alt="Built with TypeScript" style="max-width: 100%;"></a><br>
+<a href="https://news.ycombinator.com/item?id=49063754" rel="nofollow"><img src="docs/badges/hacker-news.svg" alt="Hacker News discussion" style="max-width: 100%;"></a></p>
+<p dir="auto">An explorable 3D city where buildings represent PostgreSQL internals and motion<br>
+shows their interaction. Follow a query, investigate a growing table, or see<br>
+what changes when memory, checkpoints and replication become bottlenecks.</p>
+<p dir="auto"><strong><a href="https://nikolays.github.io/PGSimCity/" rel="nofollow">Explore the city →</a></strong> ·<br>
+<a href="https://nikolays.github.io/PGSimCity/observability/" rel="nofollow">Diagnose</a> ·<br>
+<a href="https://nikolays.github.io/PGSimCity/machine/" rel="nofollow">Machine</a></p>
+<p dir="auto"><a href="#hacker-news-discussion">Community discussion</a> · <a href="#press-coverage">Press coverage</a> ·<br>
+<a href="#start-here-investigate-a-vacuum-blockade">Start here</a> · <a href="#how-much-to-trust-this">Model accuracy</a></p>
+<p dir="auto">No installation. Runs in a browser with WebGL2.<br>
+The city is an educational model, not a running PostgreSQL server.</p>
+<p dir="auto"><a href="https://nikolays.github.io/PGSimCity/" rel="nofollow"><img src="docs/screenshot.png" alt="PGSimCity at golden hour: the buffer pool, backend avenue and surrounding PostgreSQL districts. Click to explore the city." style="max-width: 100%;"></a></p>
+<h2 dir="auto">Hacker News discussion</h2>
+<blockquote>
+<p dir="auto"><strong><a href="https://news.ycombinator.com/item?id=49063754" rel="nofollow">930 points · 91 comments on Hacker News →</a></strong></p>
+<p dir="auto">Explore the community’s questions, technical discussion and feedback on<br>
+<strong>PGSimCity — How PostgreSQL Works</strong>, posted July 27, 2026.</p>
+<p dir="auto">Counts checked October 11, 2026. The discussion describes the version available then.</p>
+</blockquote>
+<h2 dir="auto">Press coverage</h2>
+<p dir="auto">Selected reporting and hands-on reviews of PGSimCity:</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>Publication</th>
+<th>Article</th>
+<th>Published</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Clement Mondary · Français</strong></td>
+<td><a href="https://mondary.design/2026/08/pgsimcity-comprendre-postgresql-en-visitant-une-ville-en-3d/" rel="nofollow">PGSIMCITY : comprendre PostgreSQL en visitant une ville en 3D</a> — an introduction to the city’s visual language, interactive scenarios and distinction between the simulation and PGlite.</td>
+<td>August 22, 2026</td>
+</tr>
+<tr>
+<td><strong>InfoQ</strong></td>
+<td><a href="https://www.infoq.com/news/2026/08/pgsimcity/" rel="nofollow">How PGSimCity Turns PostgreSQL Complexity into a Virtual City 3D Simulation</a> — Olimpiu Pop on the project’s architecture and educational approach. Also available in <a href="https://www.infoq.cn/article/umVdo2GaEyONQLWNmPZ9" rel="nofollow">简体中文</a>, translated by 田橙.</td>
+<td>August 16, 2026</td>
+</tr>
+<tr>
+<td><strong>IBM Think</strong></td>
+<td><a href="https://www.ibm.com/think/news/pgsimcity-postgresql-3d-visualization" rel="nofollow">Someone turned PostgreSQL into a city you can walk around in</a> — Antonia Davison’s feature, also included in the IBM Think newsletter.</td>
+<td>July 31, 2026</td>
+</tr>
+<tr>
+<td><strong>Gizmodo</strong></td>
+<td><a href="https://gizmodo.com/this-simcity-like-visualization-turns-techs-most-boring-systems-into-fun-2000791397" rel="nofollow">This SimCity-Like Visualization Turns Tech’s Most Boring Systems Into Fun</a> — Tom Hawking’s hands-on review.</td>
+<td>July 28, 2026</td>
+</tr>
+<tr>
+<td><strong>GIGAZINE</strong></td>
+<td><a href="https://gigazine.net/news/20260728-pgsimcity-postgresql/" rel="nofollow">データベース「PostgreSQL」がどのように実際には内部で動いているかがシムシティっぽい3Dでわかる「PGSimCity」</a> — a screenshot-led Japanese walkthrough of connections, query planning, buffers, page storage, WAL, vacuum and replication. <a href="https://gigazine.net/gsc_news/en/20260728-pgsimcity-postgresql/" rel="nofollow">English edition</a>.</td>
+<td>July 28, 2026</td>
+</tr>
+<tr>
+<td><strong>Developers Digest</strong></td>
+<td><a href="https://www.developersdigest.tech/blog/pgsimcity-postgresql-3d-visualization-hn" rel="nofollow">PGSimCity: A 3D Interactive City That Visualizes How PostgreSQL Works</a> — an overview of the visualization and the Hacker News discussion, including community feedback on usability and accuracy.</td>
+<td>July 27, 2026</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p dir="auto">Articles describe the version available when published.</p>
+<hr>
+<h2 dir="auto">Start here: investigate a vacuum blockade</h2>
+<p dir="auto"><strong>A table keeps growing even though autovacuum is running. Why?</strong></p>
+<ol dir="auto">
+<li><a href="https://nikolays.github.io/PGSimCity/" rel="nofollow">Open the city</a> and choose <strong>Investigate</strong>.<br>
+This starts the guided vacuum-blockade case.</li>
+<li>Inspect and record the table, worker, snapshot and application-owner evidence.<br>
+Explain what prevents cleanup before choosing an intervention.</li>
+<li>End the transaction that the case establishes as abandoned, then check whether<br>
+vacuum actually reclaims row versions. Releasing a snapshot is not itself cleanup.</li>
+<li>Choose <strong>Inspect a page and its row versions</strong> to connect the investigation<br>
+to the page layout, tuple header and snapshot diagrams.</li>
+</ol>
+<p dir="auto">Pause when you need time to read. Try challenge mode afterward for less guidance.<br>
+Evidence and notes belong to the current attempt; they do not survive a reload.</p>
+<h2 dir="auto">Choose your view</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>Experience</th>
+<th>What you can do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="https://nikolays.github.io/PGSimCity/" rel="nofollow">City</a></strong></td>
+<td>Explore the engine spatially, follow the guided tour and investigate a vacuum incident.</td>
+</tr>
+<tr>
+<td><strong><a href="https://nikolays.github.io/PGSimCity/observability/" rel="nofollow">Diagnose</a></strong></td>
+<td>Follow a query’s path and inspect the simulation through a 2D diagnostic interface.</td>
+</tr>
+<tr>
+<td><strong><a href="https://nikolays.github.io/PGSimCity/machine/" rel="nofollow">Machine</a></strong></td>
+<td>Run real SQL with opt-in PGlite beside a 2D architecture board; measured and modeled values are labeled separately.</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h2 dir="auto">How much to trust this</h2>
+<p dir="auto"><strong>The city is a model, not a running PostgreSQL server.</strong> Its numbers and timing<br>
+are scaled to make internals observable. The separate Machine and opt-in Query<br>
+flow can execute real PostgreSQL through PGlite; they do not turn the city into<br>
+a production monitor.</p>
+<p dir="auto">The project is an evolving 0.x prototype, with known simplifications and tests<br>
+against PostgreSQL behavior. See <a href="https://github.com/NikolayS/PGSimCity/blob/mark-readme-refresh/docs/MODEL-ACCURACY.md">model accuracy and limitations</a><br>
+for the reviewed reference version, formulas and review history.</p>
+<p dir="auto">PGSimCity targets the PostgreSQL 18 major line, with PostgreSQL 18.6 as its<br>
+reviewed reference and <a href="https://github.com/postgres/postgres/tree/REL_18_STABLE"><code class="notranslate">REL_18_STABLE</code></a><br>
+as the source branch. Four review rounds are documented in the accuracy notes;<br>
+they do not establish complete coverage or make this model an emulator.<br>
+<a href="https://github.com/NikolayS/PGSimCity/issues/new?template=postgresql-mismatch.md">Report a PostgreSQL mismatch</a>.</p>
+<p dir="auto">Lessons include keyboard and text-first routes; the 3D scene and first-person<br>
+walk do not have a nonvisual equivalent. Touch verification has used browser<br>
+emulation, not physical devices. <a href="https://github.com/NikolayS/PGSimCity/blob/mark-readme-refresh/blueprints/ACCESSIBILITY.md">Accessibility and alternatives</a>.</p>
+<hr>
+<h2 dir="auto">What you are looking at</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>District</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Client sky</strong> (north, above)</td>
+<td>Connections arriving from the application tier</td>
+</tr>
+<tr>
+<td><strong>Postmaster</strong></td>
+<td>The supervisor. Forks one backend per connection and never touches your data</td>
+</tr>
+<tr>
+<td><strong>Backend row</strong></td>
+<td>16 backend processes. Their lighting <em>is</em> their state — including <code class="notranslate">idle in transaction</code></td>
+</tr>
+<tr>
+<td><strong>Buffer pool (<code class="notranslate">shared_buffers</code>)</strong></td>
+<td>Up to 1,024 representative frames (256 active at the 2 GiB model default; PostgreSQL 18 defaults to 128 MiB), beside <code class="notranslate">wal_buffers</code>, the ProcArray, lock table, CLOG and buffer mapping table</td>
+</tr>
+<tr>
+<td><strong>The excavation</strong></td>
+<td>The data directory: where memory ends and storage begins</td>
+</tr>
+<tr>
+<td><strong>Storage</strong> (below)</td>
+<td>Heap files as fields of 8 KiB pages, B-trees as actual trees, TOAST, the FSM and visibility map, the OS page cache and the disks</td>
+</tr>
+<tr>
+<td><strong>WAL district</strong> (east)</td>
+<td>Backends and walwriter write WAL into <code class="notranslate">pg_wal</code>; the archiver copies completed segments, while walsenders independently stream WAL as it is generated</td>
+</tr>
+<tr>
+<td><strong>Maintenance yard</strong> (west)</td>
+<td>Checkpointer, background writer, autovacuum launcher and its workers</td>
+</tr>
+<tr>
+<td><strong>Standbys</strong> (south)</td>
+<td>Two independent walreceivers, startup processes replaying WAL, and the lag on each stream</td>
+</tr>
+<tr>
+<td><strong>Continuity quarter</strong> (outer east and south)</td>
+<td>WAL archive, base backups, point-in-time recovery, delayed replay, leader lease and rejoin machinery</td>
+</tr>
+<tr>
+<td><strong>Query lab</strong> (above the backends)</td>
+<td>Select a backend and its statement unfolds: parse → rewrite → plan → execute</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<blockquote>
+<p dir="auto">PostgreSQL 18's bulk-read strategy grows with <code class="notranslate">io_combine_limit × effective_io_concurrency</code>,<br>
+subject to caps. This city's animation uses a <strong>fixed 32-frame ring</strong> instead;<br>
+it is a historical simplification, not PostgreSQL 18's sizing rule.<br>
+<a href="https://github.com/NikolayS/PGSimCity/blob/mark-readme-refresh/docs/MODEL-ACCURACY.md">Model accuracy and source reference</a>.</p>
+</blockquote>
+<p dir="auto">Colour is semantic everywhere and never decorative: <strong>WAL is amber</strong>, <strong>dirty<br>
+pages are red</strong>, <strong>clean pages are blue</strong>, <strong>vacuum is violet</strong>, <strong>checkpoints<br>
+are pink</strong>, <strong>the background writer is teal</strong>, <strong>replication is orange</strong>,<br>
+<strong>storage is green</strong>, <strong>indexes are aqua</strong>, <strong>locks are red</strong>.</p>
+<hr>
+<h2 dir="auto">More things to try</h2>
+<ul dir="auto">
+<li>Press <strong><code class="notranslate">T</code></strong> for the 14-chapter guided tour. It follows one connection from<br>
+the client through planning, caching, WAL, checkpoints, vacuum and replication.</li>
+<li>Press <strong><code class="notranslate">Enter</code></strong> to trace one statement. Pick <strong>Non-HOT UPDATE</strong> and slow<br>
+playback exposes where it enters the buffer pool, creates WAL and waits to<br>
+commit.</li>
+<li>Run <strong>Cache thrash</strong> from the Scenarios menu. It sets <code class="notranslate">shared_buffers</code> to<br>
+16 MiB — below the manual control's 128 MiB minimum — so the clock sweep races<br>
+and backends write their own dirty victims before they can read another page.</li>
+<li>Run <strong>The work_mem cliff</strong>. Its fixed Sort and HashAggregate nodes spill at<br>
+2 MiB, then fit at 4 MiB without replanning; the private reservoirs,<br>
+<code class="notranslate">base/pgsql_tmp</code>, temp counters and latency breakdown show the consequence.</li>
+<li>Turn on <strong>Long-running transaction</strong>. The xmin horizon blade sinks and goes<br>
+red; autovacuum still travels to the tables, but reports zero removable rows<br>
+while the <code class="notranslate">sessions</code> table keeps bloating. Release the transaction and cleanup<br>
+can begin again.</li>
+<li>Run <strong>Checkpoint storm</strong>. Watch the checkpointer's flywheel spin up, the fsync<br>
+phase shudder, and a wall of full-page writes flood the WAL district after<br>
+each checkpoint begins.</li>
+<li>Set <strong><code class="notranslate">synchronous_commit</code></strong> to <code class="notranslate">off</code> and watch backends stop waiting in<br>
+<code class="notranslate">commit_wait</code>. Then read what you just traded away.</li>
+<li>Turn on <strong>Slow replay</strong> and watch <code class="notranslate">sent_lsn</code>, <code class="notranslate">write_lsn</code>, <code class="notranslate">flush_lsn</code> and<br>
+<code class="notranslate">replay_lsn</code> pull apart on the standby.</li>
+<li>Press <strong><code class="notranslate">G</code></strong> and walk through the city at eye level. A buffer frame that read<br>
+as one tile from the establishing shot becomes a structure above your head.<br>
+Press <strong><code class="notranslate">E</code></strong> at the autovacuum lever or the postmaster door to operate it;<br>
+the control center inside can trace one of six statements across a map of the city.</li>
+<li>Try an operator scenario, wait for its decision, and choose a response. Slot<br>
+pressure, failover, and recovery make the consequence visible and offer a safe reset.</li>
+</ul>
+<hr>
+<h2 dir="auto">Controls</h2>
+<p dir="auto">Start with <strong>drag</strong> to pan, <strong>wheel/pinch</strong> to zoom, <strong>T</strong> for the tour,<br>
+<strong>K</strong> to pause and <strong>H</strong> to return to the overview.</p>
+<details>
+<summary>All camera controls and keyboard shortcuts</summary>
+<p dir="auto">Press <strong><code class="notranslate">?</code></strong> in the city for the city control map and colour legend.</p>
+<h3 dir="auto">Camera</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>Input</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Left-drag</td>
+<td>Pan in orbit mode — grab the ground and move it, the way a map does</td>
+</tr>
+<tr>
+<td><code class="notranslate">Shift</code>-left-drag or <code class="notranslate">Ctrl</code>/<code class="notranslate">Cmd</code>-left-drag</td>
+<td>Orbit around the city</td>
+</tr>
+<tr>
+<td>Middle-drag</td>
+<td>Pan in orbit mode</td>
+</tr>
+<tr>
+<td>Right-click or touch long-press</td>
+<td>Open the context menu</td>
+</tr>
+<tr>
+<td>Wheel</td>
+<td>Zoom towards the cursor in orbit mode · adjust movement speed in fly mode</td>
+</tr>
+<tr>
+<td>1 finger</td>
+<td>Pan in orbit mode</td>
+</tr>
+<tr>
+<td>2 fingers</td>
+<td>Pinch to zoom · twist to orbit · drag both up/down to tilt</td>
+</tr>
+<tr>
+<td>First-person touch</td>
+<td>Left thumb moves · right thumb looks · buttons jump and crouch (rise and dive while swimming)</td>
+</tr>
+<tr>
+<td>Click</td>
+<td>Select a building · in fly or walk mode, capture the mouse for looking</td>
+</tr>
+<tr>
+<td>Double-click</td>
+<td>Focus a component — semantic focus instead of a map-style zoom step</td>
+</tr>
+<tr>
+<td><code class="notranslate">W</code> <code class="notranslate">A</code> <code class="notranslate">S</code> <code class="notranslate">D</code> or the arrow keys</td>
+<td>Move</td>
+</tr>
+<tr>
+<td><code class="notranslate">Shift</code> + left/right arrow</td>
+<td>Turn left/right in orbit, fly, or walk mode</td>
+</tr>
+<tr>
+<td><code class="notranslate">Shift</code> + up/down arrow</td>
+<td>Tilt or look up/down in orbit, fly, or walk mode</td>
+</tr>
+<tr>
+<td><code class="notranslate">+</code> / <code class="notranslate">-</code></td>
+<td>Zoom in/out in orbit mode</td>
+</tr>
+<tr>
+<td><code class="notranslate">Space</code> or <code class="notranslate">E</code> · <code class="notranslate">C</code> or <code class="notranslate">Q</code></td>
+<td>Rise · descend in fly mode; in walk mode, <code class="notranslate">Space</code> jumps, <code class="notranslate">E</code> operates nearby levers, doors, or consoles, and <code class="notranslate">C</code> crouches</td>
+</tr>
+<tr>
+<td><code class="notranslate">PageUp</code> / <code class="notranslate">PageDown</code></td>
+<td>Change altitude in orbit or fly mode</td>
+</tr>
+<tr>
+<td><code class="notranslate">Shift</code> · <code class="notranslate">Alt</code></td>
+<td>Boost · precision in orbit or fly mode; <code class="notranslate">Shift</code> runs in walk mode</td>
+</tr>
+<tr>
+<td><code class="notranslate">Esc</code></td>
+<td>Leave pointer lock</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3 dir="auto">Keys</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>Key</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">F</code></td>
+<td>Toggle fly / orbit camera</td>
+</tr>
+<tr>
+<td><code class="notranslate">G</code></td>
+<td>Get down and walk the city on foot, 1.7 m tall</td>
+</tr>
+<tr>
+<td><code class="notranslate">H</code></td>
+<td>Back to the establishing shot</td>
+</tr>
+<tr>
+<td><code class="notranslate">Home</code></td>
+<td>Back to the default establishing shot</td>
+</tr>
+<tr>
+<td><code class="notranslate">O</code></td>
+<td>Straight-down overview of the whole plate</td>
+</tr>
+<tr>
+<td><code class="notranslate">T</code></td>
+<td>Guided tour — the core query and maintenance path in 14 chapters</td>
+</tr>
+<tr>
+<td><code class="notranslate">Enter</code></td>
+<td>Open Run a Query</td>
+</tr>
+<tr>
+<td><code class="notranslate">/</code> or <code class="notranslate">Ctrl/Cmd+K</code></td>
+<td>Command palette — search every component, setting and scenario</td>
+</tr>
+<tr>
+<td><code class="notranslate">?</code></td>
+<td>Keyboard map and colour legend</td>
+</tr>
+<tr>
+<td><code class="notranslate">L</code></td>
+<td>Toggle the floating labels</td>
+</tr>
+<tr>
+<td><code class="notranslate">N</code></td>
+<td>Cycle night / afternoon daylight / approximate local-time light</td>
+</tr>
+<tr>
+<td><code class="notranslate">M</code></td>
+<td>Toggle walk sound</td>
+</tr>
+<tr>
+<td><code class="notranslate">K</code> or <code class="notranslate">P</code></td>
+<td>Pause / resume</td>
+</tr>
+<tr>
+<td>Focus <strong>+0.1 model s</strong>, then <code class="notranslate">Enter</code></td>
+<td>Advance the paused workload by 0.1 model seconds; remain paused</td>
+</tr>
+<tr>
+<td><code class="notranslate">,</code> <code class="notranslate">.</code></td>
+<td>Slower / faster (0.1× – 5×)</td>
+</tr>
+<tr>
+<td><code class="notranslate">R</code></td>
+<td>Reset to the default settings</td>
+</tr>
+<tr>
+<td><code class="notranslate">Esc</code></td>
+<td>Close the topmost overlay</td>
+</tr>
+<tr>
+<td><code class="notranslate">1</code> – <code class="notranslate">8</code></td>
+<td>Jump to a district: clients, backends, buffer pool, WAL, storage, query lab, maintenance, standby</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3 dir="auto">WAL operations campaign</h3>
+<p dir="auto">Choose <strong>Campaign</strong>, or open the <a href="https://nikolays.github.io/PGSimCity/#campaign/slot-pressure/guided" rel="nofollow">required-standby case</a> and the <a href="https://nikolays.github.io/PGSimCity/#campaign/retired-slot/challenge" rel="nofollow">retired-consumer challenge</a>.<br>
+Opening preserves the city; <strong>Reset city and start</strong> explicitly creates a fresh<br>
+case and clears replay history. Record ownership and live pressure, intervene,<br>
+then observe and verify recovery. Explain why the same slot operation has a<br>
+different trade-off when the consumer must return versus when it is retired.</p>
+<p dir="auto">Observation advances at most 300 model seconds per request and can be stopped.<br>
+Slot removal releases one retention requirement; physical WAL reclamation waits<br>
+for checkpoint completion and other retainers. Completion records an observed<br>
+model result, not a graded explanation or measured learning gain. Only bounded<br>
+case-completion identifiers persist locally; notes/evidence stay in this attempt<br>
+and are discarded when switching cases. <strong>Clear local completion history</strong><br>
+removes that record. Storage failure leaves session-only progress usable.</p>
+<h3 dir="auto">Replay and compare an incident</h3>
+<p dir="auto">Choose <strong>Replay</strong>, then <strong>Save checkpoint</strong> before an intervention. Observe an<br>
+outcome, <strong>Rewind to checkpoint</strong>, change a model control or operator decision,<br>
+and <strong>Run alternative to same duration</strong>. The comparison preserves the seeded<br>
+prefix and labels counters, current gauges and model-time latency explicitly.<br>
+Rewind reconstructs the model; saved investigation evidence and Diagnose’s<br>
+previous-step button are navigation, not rewind.</p>
+<p dir="auto">The linked <strong>Console</strong> and <strong>Back to city</strong> controls transfer the current model<br>
+incident in the same tab, including selection and diagnostic trail. Diagnostic<br>
+sampling windows restart on arrival; PGlite remains a separate opt-in database.<br>
+Export a comparison before switching views: saved replay checkpoints, comparison<br>
+baselines and investigation notes do not transfer.<br>
+Browser reload/Back is not linked navigation and can reject an expired or<br>
+already-consumed transfer. Use the explicit new-city link to discard it.<br>
+Replay records are local, bounded and exact-build-specific; copying a record<br>
+is not a URL share, and does not include lesson answers or PGlite data.</p>
+<h3 dir="auto">Export a presentation image</h3>
+<p dir="auto">Choose <strong>Export image</strong> in the city toolbar. The model pauses until you return<br>
+to the city. PNG export keeps the current camera and graphics quality; visible<br>
+object names are optional, but the model disclosure, version, and model clock<br>
+always remain in the image footer. After a replay comparison, include the<br>
+comparison explanation to retain the seed/checkpoint, recorded interventions,<br>
+original and alternative durations, and qualified outcomes. Unequal durations<br>
+are marked as not a controlled comparison. Long action lists are summarized<br>
+with an explicit omitted count.</p>
+<p dir="auto">The default 2× option caps the scene at 4 megapixels. An explicit 4K scene option<br>
+fits the camera aspect within 3840 × 2160 (rotated for a portrait view), subject<br>
+to GPU limits. The disclosure footer adds height. Large captures can exhaust GPU<br>
+memory; try 1× if an export fails. A prepared-image link remains available if<br>
+the browser blocks the automatic download.</p>
+<hr>
+</details>
+<h2 dir="auto">How it is built</h2>
+<pre lang="text" class="notranslate"><code class="notranslate">src/
+  core/           shared contracts, event bus, registry, themes and utilities
+  sim/            the PostgreSQL simulation
+  world/          the city geometry, one module per district
+  engine/         renderer, camera, flows, labels, picking, collision and audio
+  ui/             controls, inspector, tour, search and written explanations
+  observability/  a separate diagnostic interface over the same simulation
+machine/           a separate psql workbench and 2D architecture board
+</code></pre>
+<p dir="auto">Three rules hold it together:</p>
+<ol dir="auto">
+<li><strong><code class="notranslate">world/layout.ts</code> is the single source of truth for geography.</strong> Anchors,<br>
+table definitions and the route network live there. No district hard-codes a<br>
+coordinate another district needs.</li>
+<li><strong>The simulation never imports three.js, and the world never mutates the<br>
+simulation.</strong> They meet at <code class="notranslate">SimState</code>.</li>
+<li><strong>Rendering carries meaning differently by theme.</strong> At night structure is<br>
+matte and meaning is neon; in daylight hue and value carry meaning without<br>
+relying on bloom. Local-time light follows an approximate 06:00–18:00 path<br>
+from the reader's clock; it uses neither geolocation nor an astronomical<br>
+latitude/season model.</li>
+</ol>
+<p dir="auto">Stack: <a href="https://threejs.org" rel="nofollow">three.js</a> r185, TypeScript, Vite. three.js is the<br>
+3D application's only bundled runtime dependency. The separate 2D Query flow<br>
+and Machine may lazy-load PGlite after reader opt-in. There is no framework,<br>
+and Plausible analytics is the sole external service.</p>
+<p dir="auto"><code class="notranslate">window.PGSIMCITY</code> in the browser console includes <code class="notranslate">sim</code>, <code class="notranslate">registry</code>, <code class="notranslate">bus</code>,<br>
+<code class="notranslate">rig</code>, <code class="notranslate">gfx</code> and <code class="notranslate">flows</code> if you would rather drive the city from the outside.<br>
+For formulas, review history and known simplifications, see<br>
+<a href="https://github.com/NikolayS/PGSimCity/blob/mark-readme-refresh/docs/MODEL-ACCURACY.md">Model accuracy and limitations</a>. Each inspector names<br>
+material simplifications at the point where they matter.</p>
+<h3 dir="auto">Real PostgreSQL beside the model</h3>
+<p dir="auto">The <a href="https://github.com/NikolayS/PGSimCity/blob/mark-readme-refresh/docs/MODEL-ACCURACY.md">accuracy boundary</a> makes internals<br>
+such as the clock sweep's frame-by-frame victim choice observable. The separate<br>
+Query flow and the <a href="https://nikolays.github.io/PGSimCity/machine/" rel="nofollow">Machine</a> offer opt-in PGlite modes: real PostgreSQL<br>
+supplies parsing, plans, catalogs, buffer counters, errors and results, while the<br>
+visual model supplies the otherwise hidden interior. Each surface labels those<br>
+sources separately because PostgreSQL exposes the former and not the latter.</p>
+<hr>
+<h2 dir="auto">Run it locally</h2>
+<p dir="auto">You need Node.js <code class="notranslate">^20.19.0 || &gt;=22.12.0</code> and a browser with WebGL2.</p>
+<div class="highlight highlight-source-shell" dir="auto"><pre class="notranslate">npm install
+npm run dev      <span class="pl-c"><span class="pl-c">#</span> http://localhost:5173</span></pre></div>
+<div class="highlight highlight-source-shell" dir="auto"><pre class="notranslate">npm <span class="pl-c1">test</span>
+npm run typecheck
+npm run build    <span class="pl-c"><span class="pl-c">#</span> static bundle in dist/</span>
+npm run preview  <span class="pl-c"><span class="pl-c">#</span> http://localhost:4173</span></pre></div>
+<p dir="auto">There is no application server. The result is a static bundle. The 3D city and<br>
+Diagnose model path make only the analytics requests described below. Query flow<br>
+and the Machine may, after an explicit click or first submitted query, load the<br>
+same-origin PGlite JavaScript, data and WebAssembly assets and run an in-memory<br>
+PostgreSQL in the browser. Their model paths continue to work when analytics or<br>
+PGlite is blocked.</p>
+<p dir="auto"><strong>Analytics and privacy.</strong> PGSimCity uses<br>
+<a href="https://plausible.io/" rel="nofollow">Plausible</a> for aggregate, cookie-free analytics on the<br>
+city, observability, and Machine pages. It records pageviews, unique visitors,<br>
+referring sites, bounce rate, visit duration and interactions such as starting<br>
+the tour, changing playback, opening a panel, tracing a statement, selecting a<br>
+building or following an outbound link. PGSimCity sends no names, email addresses,<br>
+free-form input, browser fingerprint or application-supplied personal data, and<br>
+creates no analytics cookies, analytics local storage, advertising identifier<br>
+or session recording. Blocking <code class="notranslate">plausible.io</code> stops measurement without<br>
+affecting the application.</p>
+<hr>
+<h2 dir="auto">Roadmap</h2>
+<p dir="auto">Follow the <a href="https://github.com/NikolayS/PGSimCity/issues/10" data-hovercard-type="issue" data-hovercard-url="/NikolayS/PGSimCity/issues/10/hovercard">living delivery roadmap</a><br>
+for current milestones and the <a href="https://github.com/NikolayS/PGSimCity/blob/mark-readme-refresh/blueprints/ROADMAP.md">technical roadmap</a> for longer-term<br>
+direction. See <a href="https://github.com/NikolayS/PGSimCity/releases">releases</a> for what<br>
+is actually shipped.</p>
+<h2 dir="auto">Licence</h2>
+<p dir="auto">PGSimCity is an independent, non-commercial educational visualization of<br>
+PostgreSQL internals. It is not affiliated with, sponsored, endorsed, or<br>
+approved by Electronic Arts Inc. SimCity is a trademark of Electronic Arts Inc.<br>
+This project contains no SimCity code, assets, artwork, logos, characters,<br>
+audio, or game content.</p>
+<p dir="auto"><a href="https://github.com/NikolayS/PGSimCity/blob/mark-readme-refresh/LICENSE">Apache-2.0</a>. Copyright 2026 Nikolay Samokhvalov. See <a href="https://github.com/NikolayS/PGSimCity/blob/mark-readme-refresh/NOTICE">NOTICE</a>.</p>
+<p dir="auto">PostgreSQL is a trademark of the PostgreSQL Community Association of Canada.<br>
+PGSimCity is an independent educational project and is not affiliated with,<br>
+sponsored by, or endorsed by the PostgreSQL project.</p></main></body></html>
